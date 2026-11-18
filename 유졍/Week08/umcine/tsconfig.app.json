@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    "types": ["vite/client", "node"], // 👈 이렇게 둘 다 함께 적어주세요!
+    "allowArbitraryExtensions": true,
+    "skipLibCheck": true,
+
+    "experimentalDecorators": true, // 👈 NestJS 데코레이터(@Get, @Param 등) 허용
+    "emitDecoratorMetadata": true, // 👈 NestJS 의존성 주입(MemberService) 허용
+    "useDefineForClassFields": false, // 👈 클래스 필드 충돌 방지
+    "strictPropertyInitialization": false, // DTO/Entity 변수 에러 방지
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": false, // "verbatimModuleSyntax" 옵션 끄기
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Path alias: "@/..."를 "src/..."로 해석해요 */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": false, // true -> false로 변경
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"]
+}
